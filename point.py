@@ -3,7 +3,7 @@ import random
 class Point:
     def __init__(self,x,y):
         '''
-        Initialize a Point object.
+        Initialize (create and set up) a Point object.
         :param x: the x position on the axis
         :param y: the y position on the axis
         '''
@@ -18,17 +18,35 @@ class Point:
         return f"<{self.x}, {self.y}>"
 
     def __repr__(self):
+        '''
+        Magic method that is called when we try to represent an instance
+        :return: <x,y>
+        '''
         return self.__str__() # use the same way of printing as str
 
     def distance_orig(self):
+        '''
+        Calculate the distance from the point to the origin (0,0)
+        :return: the distance from point to the origin
+        '''
         return (self.x**2 + self.y**2)**0.5 # square root of the sum of x and y squared
 
     def __gt__(self, other):
+        '''
+         Compare two points distances based on their distance to the origin.
+        :param other: another Point
+        :return: True if self is farther than the other point
+        '''
         my_distance = self.distance_orig()
         other_distance = other.distance_orig()
         return my_distance > other_distance
 
     def __eq__(self, other):
+        '''
+        See if two points are at the same distance from the origin.
+        :param other: another point
+        :return: True if the distances of the self and the other point is equal
+        '''
         my_distance = self.distance_orig()
         other_distance = other.distance_orig()
         return my_distance == other_distance
