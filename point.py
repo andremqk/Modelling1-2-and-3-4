@@ -1,6 +1,12 @@
 import random
 
 class Point:
+    '''
+    A class that represents a point in 2D space
+    '''
+
+    :param x: the x-coordinate (position on the horizontal axis)
+    :param y: the y-coordinate (position on the vertical axis)
     def __init__(self,x,y):
         '''
         Initialize (create and set up) a Point object.
