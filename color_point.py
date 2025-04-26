@@ -3,9 +3,15 @@ import random
 
 # This is a custom exception for points
 class PointException(Exception):
+    '''
+    Custom exception class for points (avoid errors (example ValueErrors))
+    '''
     pass
 
 class ColorPoint(Point):
+    '''
+     A class that represents a colored point in 2D space.
+    '''
     def __init__(self, x, y, color):
         '''
         Initialize (create and set up) a ColorPoint object.
